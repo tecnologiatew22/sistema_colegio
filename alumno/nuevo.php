@@ -22,7 +22,7 @@
   </div>  
   <div class="form-group">
     <label for="carnet">Carnet</label>
-    <input type="text" class="form-control" id="carnet" name="carnet">    
+    <input type="number" class="form-control" id="carnet" name="carnet">    
   </div>
   <div class="form-group">
     <label for="carnet">Sexo</label>
