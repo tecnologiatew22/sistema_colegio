@@ -1,12 +1,12 @@
 <?php
 //1 Recibir las variables de tipo POST
-$nombre=$_POST['nombre'];
-$paterno=$_POST['paterno'];
-$materno=$_POST['materno'];
-$fecha_nac=$_POST['fecha_nacimiento'];
-$carnet=$_POST['carnet'];
-$sexo=$_POST['sexo'];
-$direccion=$_POST['direccion'];
+$nombre = $_POST['nombre'];
+$paterno = $_POST['paterno'];
+$materno = $_POST['materno'];
+$fecha_nac = $_POST['fecha_nacimiento'];
+$carnet = $_POST['carnet'];
+$sexo = $_POST['sexo'];
+$direccion = $_POST['direccion'];
 
 //2 Verificar las variables recibidas
 // echo $nombre;
@@ -24,7 +24,7 @@ $materno = strtolower($materno);
 $direccion = strtolower($direccion);
 
 //4 Conectar a la base de datos
-$conexion = mysqli_connect("localhost","root","","colegio");
+$conexion = mysqli_connect("localhost", "root", "", "colegio");
 if (!$conexion) {
     echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
     echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
@@ -41,9 +41,22 @@ $consulta = "INSERT INTO alumno(nombres,paterno,materno,fecha_nacimiento,carnet,
 $resultado = mysqli_query($conexion, $consulta);
 
 //7 Verificar la respuesta del servidor de BD
-if($resultado){
-    echo "Se guado correctamente;";
-}else{
-    echo "No se guardo correctamente";
+if ($resultado) {
+    $mensaje = "Se guardo correctamente";
+} else {
+    $mensaje = "No se guardo correctamente";
 }
+?>
+
+<?php
+$titulo = 'Nuevo Alumno';
+require_once '../cabecerahtml.php';
+?>
+
+<div class="alert alert-primary" role="alert">
+    <?php echo $mensaje; ?>
+</div>
+
+<?php
+require_once '../piehtml.php';
 ?>
