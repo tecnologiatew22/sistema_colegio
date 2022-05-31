@@ -24,13 +24,14 @@ $materno = strtolower($materno);
 $direccion = strtolower($direccion);
 
 //4 Conectar a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "colegio");
-if (!$conexion) {
-    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
-    exit;
-}
+require_once ("../conexion.php");
+// $conexion = mysqli_connect("localhost", "root", "", "colegio");
+// if (!$conexion) {
+//     echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
+//     echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
+//     echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+//     exit;
+// }
 
 //5 Prepara la consulta de Insercion
 $consulta = "INSERT INTO alumno(nombres,paterno,materno,fecha_nacimiento,carnet,sexo,direccion) VALUES
