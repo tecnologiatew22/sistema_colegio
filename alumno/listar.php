@@ -39,6 +39,7 @@ require_once '../cabecerahtml.php';
       <th scope="col">CI</th>
       <th scope="col">Sexo</th>
       <th scope="col">Dirrecion</th>
+      <th scope="col" colspan="2">Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -56,6 +57,8 @@ require_once '../cabecerahtml.php';
         <td><?= $fila['carnet'] ?></td>
         <td><?= $fila['sexo'] == 'f' ? 'Femenino' : 'Masculino'; ?></td>
         <td><?= $fila['direccion'] ?></td>
+        <td><a href="eliminar.php?id=<?= $fila['id_alumno'] ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a> </td>
+        <td><a href="modificar.php" class="btn btn-warning btn-sm">Modificar</a></td>
       </tr>
     <?php
     }
