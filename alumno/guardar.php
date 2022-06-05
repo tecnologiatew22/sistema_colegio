@@ -24,7 +24,7 @@ $materno = strtolower($materno);
 $direccion = strtolower($direccion);
 
 //4 Conectar a la base de datos
-require_once ("../conexion.php");
+require_once("../conexion.php");
 // $conexion = mysqli_connect("localhost", "root", "", "colegio");
 // if (!$conexion) {
 //     echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
@@ -51,6 +51,7 @@ if ($resultado) {
 
 <?php
 $titulo = 'Nuevo Alumno';
+$ruta = '../';
 require_once '../cabecerahtml.php';
 ?>
 

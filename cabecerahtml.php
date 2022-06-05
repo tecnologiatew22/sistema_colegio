@@ -1,3 +1,8 @@
+<?php
+if (!isset($ruta)) {
+    $ruta = '';
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,7 +20,7 @@
             <div class="col-md-12">
                 <!-- <h1>Sistema de Colegio</h1> -->
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a class="navbar-brand" href="#">Sistema de Colegio</a>
+                    <a class="navbar-brand" href="index.php">Sistema de Colegio</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -23,7 +28,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="./index.php">Inicio <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="<?php echo $ruta; ?>index.php">Inicio <span class="sr-only">(current)</span></a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -31,9 +36,9 @@
                                     Alumno
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="alumno/nuevo.php">Nuevo Alumno</a>
+                                    <a class="dropdown-item" href="<?php echo $ruta; ?>alumno/nuevo.php">Nuevo Alumno</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="alumno/listar.php">Listado Alumno</a>
+                                    <a class="dropdown-item" href="<?php echo $ruta; ?>alumno/listar.php">Listado Alumno</a>
                                 </div>
                             </li>
 

@@ -3,7 +3,7 @@
 //2. Verificar las variables recibidas
 //3 Uniformar la informacion recibida
 //4 Conectar a la base de datos
-require_once ("../conexion.php");
+require_once("../conexion.php");
 //5 Prepara la consulta
 $consulta = "SELECT * FROM alumno";
 //echo $consulta;
@@ -24,6 +24,7 @@ $resultado = mysqli_query($conexion, $consulta);
 
 <?php
 $titulo = 'Listar Alumnos';
+$ruta = '../';
 require_once '../cabecerahtml.php';
 ?>
 
@@ -43,19 +44,19 @@ require_once '../cabecerahtml.php';
   <tbody>
     <?php
     $contador = 0;
-    while($fila = mysqli_fetch_array($resultado)){
-        $contador++;
+    while ($fila = mysqli_fetch_array($resultado)) {
+      $contador++;
     ?>
-        <tr>
-            <td><?= $contador ?></td>
-            <td><?= $fila['nombres'] ?></td>
-            <td><?= $fila['paterno'] ?></td>
-            <td><?= $fila['materno'] ?></td>
-            <td><?= $fila['fecha_nacimiento'] ?></td>
-            <td><?= $fila['carnet'] ?></td>
-            <td><?= $fila['sexo']=='f'?'Femenino':'Masculino'; ?></td>
-            <td><?= $fila['direccion'] ?></td>
-        </tr>
+      <tr>
+        <td><?= $contador ?></td>
+        <td><?= $fila['nombres'] ?></td>
+        <td><?= $fila['paterno'] ?></td>
+        <td><?= $fila['materno'] ?></td>
+        <td><?= $fila['fecha_nacimiento'] ?></td>
+        <td><?= $fila['carnet'] ?></td>
+        <td><?= $fila['sexo'] == 'f' ? 'Femenino' : 'Masculino'; ?></td>
+        <td><?= $fila['direccion'] ?></td>
+      </tr>
     <?php
     }
     ?>
@@ -64,4 +65,4 @@ require_once '../cabecerahtml.php';
 
 <?php
 require_once '../piehtml.php';
-?>  
+?>

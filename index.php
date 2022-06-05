@@ -1,5 +1,6 @@
 <?php
 $titulo = 'Pagina Principal';
+$ruta = '';
 require_once "cabecerahtml.php";
 ?>
 
